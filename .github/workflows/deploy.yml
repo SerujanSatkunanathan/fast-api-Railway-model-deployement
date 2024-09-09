@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Updated to latest version
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v4  # Updated to latest version
+      uses: actions/setup-python@v4
       with:
         python-version: '3.x'
 
@@ -28,7 +28,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest  # Adjust if you have specific tests to run
+        pytest
 
   deploy:
     runs-on: ubuntu-latest
@@ -36,16 +36,16 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # Updated to latest version
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v4  # Updated to latest version
+      uses: actions/setup-python@v4
       with:
         python-version: '3.x'
 
     - name: Deploy to Railway
       env:
-        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  # Add your Railway token in GitHub secrets
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
         curl -sL https://railway.app/install | sh
-        railway up
+        railway up --project "Iris-Prediction" 

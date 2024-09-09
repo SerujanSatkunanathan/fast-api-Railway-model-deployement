@@ -35,3 +35,5 @@ async def predict(iris: IrisInput):
         return {"prediction": prediction_class}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+    
+#2e2c349f-546c-4aa6-9aae-7761406308e6
