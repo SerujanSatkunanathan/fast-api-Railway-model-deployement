@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3  # Latest version
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v4  # Latest version
       with:
         python-version: '3.x'
 
@@ -36,10 +36,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3  # Latest version
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v4  # Latest version
       with:
         python-version: '3.x'
 
@@ -48,4 +48,4 @@ jobs:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
         curl -sL https://railway.app/install | sh
-        railway up --project "fast-api-Railway-model-deployement" 
+        railway up --project "fast-api-Railway-model-deployement"  # Ensure this matches your Railway project name
