@@ -47,11 +47,16 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Install Railway CLI
+      run: |
+        echo "Fetching Railway CLI installer..."
+        curl -sL https://railway.app/install -o railway_install.sh
+        cat railway_install.sh
+        bash railway_install.sh
+        railway --version
+
     - name: Deploy to Railway
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
-        echo "Installing Railway CLI..."
-        curl -sL https://railway.app/install | bash
-        railway --version
         railway up --project "fast-api-Railway-model-deployement"
