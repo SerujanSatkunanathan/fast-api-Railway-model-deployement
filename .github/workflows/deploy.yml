@@ -52,7 +52,7 @@ jobs:
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
-        echo $RAILWAY_TOKEN > ~/.railway_token # Replace with correct config command if needed
+        echo $RAILWAY_TOKEN > ~/.railway_token 
 
     - name: Link to the correct Railway project
       run: |
