@@ -48,15 +48,15 @@ jobs:
         curl -sL https://railway.app/install.sh | bash
         railway --version
 
-    - name: Configure Railway Authentication
+    - name: Login to Railway
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
-        echo "RAILWAY_TOKEN=${RAILWAY_TOKEN}" > ~/.railway_config # Adjust if Railway supports a specific configuration file or method
+        echo $RAILWAY_TOKEN | railway login
 
     - name: Link to the correct Railway project
       run: |
-        railway link --project "trustworthy-dream" # Replace with the correct command if needed
+        railway link --project-id "trustworthy-dream" # Use the correct project ID here
 
     - name: Deploy to Railway
       run: |
