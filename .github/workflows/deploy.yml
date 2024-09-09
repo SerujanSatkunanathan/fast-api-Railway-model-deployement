@@ -43,9 +43,13 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Install Railway CLI
+      run: |
+        curl -sL https://railway.app/install.sh | bash
+        railway --version
+
     - name: Deploy to Railway
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
-        curl -sL https://railway.app/install | bash
         railway up --project "fast-api-Railway-model-deployement"
