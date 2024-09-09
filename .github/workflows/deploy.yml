@@ -51,5 +51,7 @@ jobs:
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
-        curl -sL https://railway.app/install | sh
-        railway up --project "perpetual-education"  # Ensure this matches your Railway project name
+        echo "Installing Railway CLI..."
+        curl -sL https://railway.app/install | bash
+        railway --version
+        railway up --project "fast-api-Railway-model-deployement"
