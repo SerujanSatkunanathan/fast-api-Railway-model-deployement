@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI/CD Pipeline for Railway
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest  # Adjust as necessary for your test setup
+        pytest  # Adjust if you have specific tests to run
 
   deploy:
     runs-on: ubuntu-latest
@@ -43,8 +43,9 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Deploy to platform
+    - name: Deploy to Railway
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}  # Add your Railway token in GitHub secrets
       run: |
-        # Add your deployment commands here
-        # For example, Fly.io deployment
-        flyctl deploy
+        curl -sL https://railway.app/install | sh
+        railway up
