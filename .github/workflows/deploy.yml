@@ -48,8 +48,16 @@ jobs:
         curl -sL https://railway.app/install.sh | bash
         railway --version
 
-    - name: Deploy to Railway
+    - name: Login to Railway
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
-        railway up --project "trustworthy-dream"
+        echo $RAILWAY_TOKEN | railway login --token
+
+    - name: Link to the correct Railway project
+      run: |
+        railway link --project "trustworthy-dream" # Replace with the correct command if needed
+
+    - name: Deploy to Railway
+      run: |
+        railway up
