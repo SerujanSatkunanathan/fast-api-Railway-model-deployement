@@ -52,4 +52,4 @@ jobs:
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
-        railway up --project "fast-api-Railway-model-deployement"
+        railway up --project "trustworthy-dream"
