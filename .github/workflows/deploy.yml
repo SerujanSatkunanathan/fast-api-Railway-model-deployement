@@ -56,7 +56,7 @@ jobs:
 
     - name: Link to the correct Railway project
       run: |
-        railway link --project-id "trustworthy-dream" # Use the correct project ID here
+        railway link --project-id 25fe0141-08ce-4675-b39a-55d46fcc4597
 
     - name: Deploy to Railway
       run: |
