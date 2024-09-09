@@ -52,4 +52,4 @@ jobs:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
         curl -sL https://railway.app/install | sh
-        railway up --project "fast-api-Railway-model-deployement"  # Ensure this matches your Railway project name
+        railway up --project "perpetual-education"  # Ensure this matches your Railway project name
